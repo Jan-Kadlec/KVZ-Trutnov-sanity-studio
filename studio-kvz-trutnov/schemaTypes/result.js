@@ -2,64 +2,58 @@ export default {
   name: 'result',
   title: 'Výsledky',
   type: 'document',
+
   fields: [
     {
-      name: 'title',
+      name: 'event_name',
       title: 'Název soutěže',
       type: 'string',
       validation: (Rule) => Rule.required(),
     },
-    {
-      name: 'date',
-      title: 'Datum',
-      type: 'date',
-      validation: (Rule) => Rule.required(),
-    },
+
     {
       name: 'location',
       title: 'Místo',
       type: 'string',
     },
     {
+      name: 'event_date',
+      title: 'Datum',
+      type: 'date',
+      validation: (Rule) => Rule.required(),
+    },
+
+    {
       name: 'description',
       title: 'Popis / shrnutí',
       type: 'text',
       rows: 4,
     },
+
+    // ===== PDF PROPOZICE =====
     {
-      name: 'results',
-      title: 'Výsledková listina',
-      type: 'array',
-      of: [
-        {
-          type: 'object',
-          fields: [
-            {name: 'name', title: 'Jméno', type: 'string'},
-            {name: 'position', title: 'Umístění', type: 'number'},
-            {name: 'score', title: 'Body', type: 'string'},
-          ],
-        },
-      ],
-    },
-    {
-      name: 'proposition_file',
+      name: 'proposition_pdf_url',
       title: 'Propozice (PDF)',
       type: 'file',
       options: {
         accept: 'application/pdf',
       },
     },
+
+    // ===== PDF VÝSLEDKY =====
     {
-      name: 'results_file',
+      name: 'results_pdf_url',
       title: 'Výsledky (PDF)',
       type: 'file',
       options: {
         accept: 'application/pdf',
       },
     },
+
+    // ===== FOTKY =====
     {
-      name: 'photos',
-      title: 'Fotografie (obrázek)',
+      name: 'photos_url',
+      title: 'Fotografie',
       type: 'image',
     },
   ],
