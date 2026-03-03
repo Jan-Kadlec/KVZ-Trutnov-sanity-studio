@@ -29,6 +29,12 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      name: 'proposition',
+      title: 'Propozice (PDF)',
+      type: 'file',
+      options: {accept: 'application/pdf'},
+    },
+    {
       name: 'featured',
       title: 'Zvýraznit akci',
       type: 'boolean',
