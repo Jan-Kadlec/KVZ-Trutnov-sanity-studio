@@ -54,7 +54,11 @@ export default {
     {
       name: 'photos_url',
       title: 'Fotografie',
-      type: 'image',
+      type: 'array',
+      of: [{type: 'image'}],
+      options: {
+        layout: 'grid',
+      },
     },
   ],
 }
